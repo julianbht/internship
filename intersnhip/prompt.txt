@@ -1,0 +1,14 @@
+Context: React, Next.js, Tailwind, Shadcn
+Please follow the following rules:
+- Only use shadcn components.
+- Only use tailwinds semantic css properties
+- The code should consist of reusable React components.
+- All content, including headlines, images and other content information, should be separated from the React code
+  Splitting the component from the content.
+- Correct Typescript code, without warnings and without using "any" where it is not necessary.
+- It is important that the site is responsive and mobile-friendly.
+- All text should be in a professional English suited for a scientific paper.
+
+
+I want to build a page displaying what I learned and programmed in my internship at "donista".
+One of the pages is about

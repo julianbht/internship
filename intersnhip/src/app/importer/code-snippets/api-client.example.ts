@@ -1,5 +1,4 @@
-const apiClientCode = `
-import axios from 'axios';
+const apiClientCode = `import axios from 'axios';
 
 export async function fetchTransactions() {
   try {

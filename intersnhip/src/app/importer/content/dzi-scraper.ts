@@ -1,5 +1,5 @@
 import type { ProjectData } from "@/app/importer/types/project";
-import apiClientCode from "@/app/importer/code/api-client.example";
+import apiClientCode from "@/app/importer/code-snippets/api-client.example";
 
 export const dziScraperData: ProjectData = {
   id: "dzi-scraper",

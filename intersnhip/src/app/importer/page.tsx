@@ -1,5 +1,5 @@
 import { ProjectShowcase } from "@/app/importer/components/project-showcase";
-import { transactionImporterData } from "@/app/importer/data/transaction-importer";
+import { transactionImporterData } from "@/app/importer/content/transaction-importer";
 
 export default function Importer() {
   return (

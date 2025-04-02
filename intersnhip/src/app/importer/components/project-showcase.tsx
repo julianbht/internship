@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { ProjectData } from "@/app/importer/types/project";
+import Image from "next/image";
 
 interface ProjectShowcaseProps {
   project: ProjectData;
@@ -24,6 +25,12 @@ export function ProjectShowcase({ project }: ProjectShowcaseProps) {
         <div className="prose max-w-none dark:prose-invert">
           <p>{project.description}</p>
         </div>
+        <Image
+          src="/donista-technical-overview-be-network-importer-detailed.drawio.svg"
+          alt="Your Diagram"
+          width={400}
+          height={400}
+        />
 
         {project.codeExamples.length > 0 && (
           <div className="my-6">

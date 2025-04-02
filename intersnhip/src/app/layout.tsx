@@ -1,5 +1,6 @@
 import "./globals.css";
 import {ThemeProvider} from "@/components/themve-provider"
+import React from "react";
 
 type RootLayoutProps = {
     children: React.ReactNode

@@ -1,5 +1,4 @@
 import { CodeDisplay } from "@/app/importer/components/code-display";
-import { DiagramDisplay } from "@/app/importer/components/diagram-display";
 import {
   Card,
   CardContent,
@@ -25,13 +24,6 @@ export function ProjectShowcase({ project }: ProjectShowcaseProps) {
         <div className="prose max-w-none dark:prose-invert">
           <p>{project.description}</p>
         </div>
-
-        {project.diagram && (
-          <div className="my-6">
-            <h3 className="text-lg font-medium mb-3">Architecture Diagram</h3>
-            <DiagramDisplay diagram={project.diagram} />
-          </div>
-        )}
 
         {project.codeExamples.length > 0 && (
           <div className="my-6">

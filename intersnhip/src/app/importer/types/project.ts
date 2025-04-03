@@ -1,15 +1,12 @@
-export interface CodeExample {
-  id: string;
-  title: string;
-  description: string;
-  language: string;
-  code: string;
-}
-
-export interface ProjectData {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  codeExamples: CodeExample[];
+export interface DonistaImage {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+  title?: string;
+  srcSet?: string;
+  sizes?: string;
+  loading?: "eager" | "lazy";
+  // Optionally add more properties as needed, such as crop info or focal point
 }

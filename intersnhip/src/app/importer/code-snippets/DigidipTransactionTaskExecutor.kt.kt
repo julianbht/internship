@@ -8,7 +8,7 @@
  *  - Handling pagination and rate limiting.
  */
 @Service
-class DigidipTransactionTaskExecutor(
+class `DigidipTransactionTaskExecutor.kt`(
     private val networkRestRepository: NetworkRestRepository,
     private val merchantRestRepository: MerchantRestRepository,
     private val transactionRestRepository: TransactionRestRepository,

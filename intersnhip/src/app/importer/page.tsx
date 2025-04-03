@@ -6,7 +6,7 @@ import { PageContainer } from "@/components/custom/page-container";
 export default async function ImporterPage() {
   // Use the utility function with a full path string.
   const DigidipApiClientCode = await readFileContent(
-    "@/app/importer/code-snippets/digidipApiClient.kt",
+    "@/app/importer/code-snippets/DigidipApiClient.kt",
   );
 
   const DigidipParserCode = await readFileContent(

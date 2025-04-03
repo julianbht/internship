@@ -5,7 +5,7 @@
  */
 
 @Component
-class DigidipTransactionImporterTask(
+class `DigidipTransactionImporterTask.kt`(
     private val dtte: DigidipTransactionTaskExecutor,
 ) {
 

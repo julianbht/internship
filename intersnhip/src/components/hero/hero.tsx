@@ -1,6 +1,7 @@
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface Hero1Props {
   badge?: string;
@@ -74,11 +75,9 @@ const Hero1 = ({
               )}
             </div>
           </div>
-          <img
-            src={image.src}
-            alt={image.alt}
-            className="w-full rounded-md object-cover"
-          />
+          <div className="relative w-full h-96">
+            <Image src={image.src} alt={image.alt} fill />
+          </div>
         </div>
       </div>
     </section>

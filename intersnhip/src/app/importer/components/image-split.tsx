@@ -11,6 +11,8 @@ interface ImageSplitProps {
   image: DonistaImage;
   /** If true, the image and content order will be flipped. */
   reverse?: boolean;
+  /** The fraction of the container's width that the image should take up (0 to 1). Default is 2/3. */
+  imageFraction?: number;
 }
 
 export function ImageSplit({
@@ -18,9 +20,20 @@ export function ImageSplit({
   content,
   image,
   reverse = false,
+  imageFraction = 2 / 3,
 }: ImageSplitProps) {
+  const contentFraction = 1 - imageFraction;
+  // This CSS variable is applied only on md screens via an arbitrary media query utility.
+  // It sets the grid-template-columns as "contentFraction imageFraction" in percentages.
   return (
-    <div className="grid md:grid-cols-2 gap-8 items-center">
+    <div
+      className="grid gap-8 items-center md:[grid-template-columns:var(--grid-cols)]"
+      style={
+        {
+          "--grid-cols": `${(contentFraction * 100).toFixed(2)}% ${(imageFraction * 100).toFixed(2)}%`,
+        } as React.CSSProperties
+      }
+    >
       {/* Content Section */}
       <div className={reverse ? "order-2" : "order-1"}>
         {title && (

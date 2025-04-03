@@ -20,7 +20,7 @@ export function CodeExamplesSection({
   if (codeExamples.length === 0) return null;
 
   return (
-    <div className="my-6">
+    <div className="my-6 max-w-6xl mx-auto">
       <h3 className="text-lg font-medium mb-3">Implementation</h3>
       <Tabs defaultValue={codeExamples[0].id} className="w-full">
         <TabsList className="w-full justify-start overflow-x-auto">

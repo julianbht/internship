@@ -12,3 +12,12 @@ Please follow the following rules:
 
 I want to build a page displaying what I learned and programmed in my internship at "donista".
 One of the pages is about
+
+-----------------------------
+
+I want to display this code on my website using typescript.
+Give it to me as a proper String with backticks.
+Be careful if anything needs to be escaped.
+Export the code string so that I can use it in other files.
+
+-----------------------------

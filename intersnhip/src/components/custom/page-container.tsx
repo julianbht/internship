@@ -35,7 +35,6 @@ export function PageContainer({
   bannerAlt = "Page banner",
   bannerHeight = 300,
   className,
-  maxWidth = "max-w-5xl",
 }: PageContainerProps) {
   return (
     <div className="w-full">
@@ -52,9 +51,7 @@ export function PageContainer({
           />
         </div>
       )}
-      <main className={cn("px-4 mx-auto pb-12", maxWidth, className)}>
-        {children}
-      </main>
+      <main className={cn("px-36 mx-auto pb-12", className)}>{children}</main>
     </div>
   );
 }

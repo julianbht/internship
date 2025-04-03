@@ -5,7 +5,7 @@
  * transaction data from Digidip's detailed-transactions endpoint.
  */
 @Component
-class `DigidipApiClient.kt` {
+class DigidipApiClient {
 
     companion object {
         val LOG: Logger = LoggerFactory.getLogger(DigidipApiClient::class.java)

@@ -1,5 +1,5 @@
 @Component
-class `DigidipParser.kt` {
+class DigidipParser {
 
     // Retrieves the URL for the next page of results from the API response.
     fun getNextUrl(response: String): String {

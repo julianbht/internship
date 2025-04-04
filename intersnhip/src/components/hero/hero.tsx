@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import type { ReactNode } from "react";
 
 interface Hero1Props {
   badge?: string;
@@ -17,16 +17,13 @@ interface Hero1Props {
       url: string;
     };
   };
-  image: {
-    src: string;
-    alt: string;
-  };
+  media: ReactNode; // Updated from image object to a generic ReactNode
 }
 
 const Hero1 = ({
   badge,
-  heading = "Blocks Built With Shadcn & Tailwind",
-  description = "Finely crafted components built with React, Tailwind and Shadcn UI. Developers can copy and paste these blocks directly into their project.",
+  heading,
+  description,
   buttons = {
     primary: {
       text: "Discover all components",
@@ -37,10 +34,7 @@ const Hero1 = ({
       url: "https://www.shadcnblocks.com",
     },
   },
-  image = {
-    src: "https://www.shadcnblocks.com/images/block/placeholder-1.svg",
-    alt: "Hero section demo image showing interface components",
-  },
+  media,
 }: Hero1Props) => {
   return (
     <section className="py-32">
@@ -75,9 +69,8 @@ const Hero1 = ({
               )}
             </div>
           </div>
-          <div className="relative w-full h-96">
-            <Image src={image.src} alt={image.alt} fill />
-          </div>
+          {/* Accepts any ReactNode instead of a fixed image */}
+          <div className="relative w-full h-96 flex items-center">{media}</div>
         </div>
       </div>
     </section>

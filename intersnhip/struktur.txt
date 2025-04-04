@@ -1,7 +1,7 @@
 Backend:
 - Importer:
-    - Digidip Transactionimporter, Ingenious Merchant Importer, DZI Scraper
-    - Struktur (Architketur)
+    - Digidip Transactionimporter, Ingenious Merchant Importer
+    - DZI Scraper
 - Domänenmodell:
     - Graphik draw.io
     - Beispiel: Kotlin und postgres

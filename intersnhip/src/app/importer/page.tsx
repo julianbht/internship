@@ -25,7 +25,7 @@ export default async function ImporterPage() {
     <PageContainer>
       <Hero1
         badge="Previous Project"
-        heading="Transaction Data Importer"
+        heading="Transaction Importer"
         description="The task is to import transactions from digidip, an affiliate meta-network. Digidip provides us with affiliate links for approximately 70,000 shops. Whenever a user clicks on one of these links, a transaction is initiated. These transactions will be retrieved through the digidip API and subsequently stored in our database."
         image={{
           src: "/importer-architecture.svg",

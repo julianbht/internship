@@ -70,7 +70,7 @@ const Hero1 = ({
             </div>
           </div>
           {/* Accepts any ReactNode instead of a fixed image */}
-          <div className="relative w-full h-96 flex items-center">{media}</div>
+          <div className="flex items-center justify-center">{media}</div>
         </div>
       </div>
     </section>

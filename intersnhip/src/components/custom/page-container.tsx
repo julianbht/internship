@@ -51,7 +51,9 @@ export function PageContainer({
           />
         </div>
       )}
-      <main className={cn("px-36 mx-auto pb-12", className)}>{children}</main>
+      <main className={cn("max-w-7xl mx-auto pb-12 className")}>
+        {children}
+      </main>
     </div>
   );
 }

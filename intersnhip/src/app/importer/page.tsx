@@ -28,11 +28,14 @@ export default async function ImporterPage() {
         heading="Transaction Importer"
         description="This project implements a recurring data pipeline that imports affiliate transaction data from Digidip, a network aggregating over 70,000 merchants. On a fixed schedule, the system retrieves, parses, and persists timestamped transaction data via the Digidip API, linking each entry to the appropriate merchant and capturing key financial metrics. The architecture cleanly separates scheduling, API access, parsing, and persistence to ensure robustness and maintainability."
         media={
-          <Image
-            src="/importer-architecture.svg"
-            alt="Importer Architecture Diagram"
-            fill
-          />
+          <div className="relative w-full max-w-6xl aspect-[4/3]">
+            <Image
+              src="/importer-architecture.svg"
+              alt="Importer Architecture Diagram"
+              fill
+              className="object-contain"
+            />
+          </div>
         }
         buttons={{
           primary: { text: "Learn more", url: "#" },

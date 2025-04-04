@@ -1,4 +1,3 @@
-// src/lib/readFileContent.ts
 import fs from "fs/promises";
 import path from "path";
 

@@ -28,12 +28,10 @@ export function ProjectDialog({
   project,
   open,
   onOpenChangeAction,
-  setShowProjectAction,
-  showSupportButton = true, // Default value is true
 }: ProjectDialogProps) {
   if (!project) return null;
 
-  // Helper to format income values with a thousands separator and Euro symbol
+  // Helper to format income values with a thousand separator and Euro symbol
   const formatIncome = (amount?: number) => {
     if (amount == null) return "";
     return amount.toLocaleString("de-DE") + " €";

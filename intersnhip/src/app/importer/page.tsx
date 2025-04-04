@@ -1,10 +1,10 @@
 import { readFileContent } from "@/lib/read-file-content";
 import { Hero1 } from "@/components/hero/hero";
-import { CodeExamplesSection } from "@/app/importer/components/code-examples";
+import { CodeExamplesSection } from "@/components/custom/code-examples";
 import { PageContainer } from "@/components/custom/page-container";
+import Image from "next/image";
 
 export default async function ImporterPage() {
-  // Use the utility function with a full path string.
   const DigidipApiClientCode = await readFileContent(
     "@/app/importer/code-snippets/DigidipApiClient.kt",
   );
@@ -26,16 +26,20 @@ export default async function ImporterPage() {
       <Hero1
         badge="Previous Project"
         heading="Transaction Importer"
-        description="The task is to import transactions from digidip, an affiliate meta-network. Digidip provides us with affiliate links for approximately 70,000 shops. Whenever a user clicks on one of these links, a transaction is initiated. These transactions will be retrieved through the digidip API and subsequently stored in our database."
-        image={{
-          src: "/importer-architecture.svg",
-          alt: "Importer Architecture Diagram",
-        }}
+        description="This project implements a recurring data pipeline that imports affiliate transaction data from Digidip, a network aggregating over 70,000 merchants. On a fixed schedule, the system retrieves, parses, and persists timestamped transaction data via the Digidip API, linking each entry to the appropriate merchant and capturing key financial metrics. The architecture cleanly separates scheduling, API access, parsing, and persistence to ensure robustness and maintainability."
+        media={
+          <Image
+            src="/importer-architecture.svg"
+            alt="Importer Architecture Diagram"
+            fill
+          />
+        }
         buttons={{
           primary: { text: "Learn more", url: "#" },
           secondary: { text: "Next project", url: "#" },
         }}
       />
+
       <CodeExamplesSection
         codeExamples={[
           {

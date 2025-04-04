@@ -8,6 +8,7 @@ Please follow the following rules:
 - Correct Typescript code, without warnings and without using "any" where it is not necessary.
 - It is important that the site is responsive and mobile-friendly.
 - All text should be in a professional English suited for a scientific paper.
+- Use destructured props pattern
 
 
 I want to build a page displaying what I learned and programmed in my internship at "donista".

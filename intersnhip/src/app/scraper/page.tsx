@@ -1,6 +1,6 @@
 // app/scraper/page.tsx
 import { readFileContent } from "@/lib/read-file-content";
-import ScraperPageInteractive from "@/app/scraper/ScraperPageInteractive";
+import ScraperPageInteractive from "@/app/scraper/scraper-page-interactive";
 
 export default async function DziScraperPage() {
   // Load code snippets using the utility function

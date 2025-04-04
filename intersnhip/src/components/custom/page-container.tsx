@@ -34,7 +34,6 @@ export function PageContainer({
   bannerSrc,
   bannerAlt = "Page banner",
   bannerHeight = 300,
-  className,
 }: PageContainerProps) {
   return (
     <div className="w-full">

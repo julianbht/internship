@@ -1,0 +1,13 @@
+ls:
+  .ts: kebab-case
+  .tsx: kebab-case
+  app/**/components:
+    .dir: regex:_components
+
+ignore:
+  - "**/node_modules"
+  - ".next/**/*"
+  - next-env.d.ts
+  - next.config.ts
+  - tailwind.config.ts
+  - types/**/*

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Hero1 } from "@/components/hero/hero";
+import { Hero1 } from "@/components/hero/hero1";
 import { CodeExamplesSection } from "@/components/custom/code-examples";
 import { PageContainer } from "@/components/custom/page-container";
 import { ProjectCard } from "@/components/charity/project-card";

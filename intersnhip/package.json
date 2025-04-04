@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "pnpm run lint && next build",
     "start": "next start",
-    "lint": "next lint"
+    "ls-lint": "npx @ls-lint/ls-lint",
+    "lint": "pnpm ls-lint && eslint ."
   },
   "dependencies": {
+    "@eslint/js": "^9.23.0",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-alert-dialog": "^1.1.6",
@@ -70,6 +73,11 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.17.0",
+    "eslint-plugin-promise": "^7.2.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

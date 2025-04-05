@@ -8,8 +8,9 @@ Backend:
 - API: mostly Spring JPA but a couple own ones
 - Distributed Task scheduling
 
-Frontend:
--
+
+api endpoint
+release infra
 
 
 

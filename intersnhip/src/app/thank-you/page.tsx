@@ -48,8 +48,8 @@ export default function ThankYouPage() {
         </h1>
         <p className="mx-auto max-w-2xl text-lg">
           to donista for offering me this amazing opportunity. Shout out to
-          anyone I wasnt able to mention below - André, Semjon and the Enactus
-          team - you've been great to work with.
+          anyone I wasnt able to mention below - André, Semjon, the Enactus team
+          and ChatGPT - you've been great to work with.
         </p>
       </div>
 

@@ -90,7 +90,12 @@ export default function ThankYouPage() {
         ))}
       </div>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center gap-4">
+        <Link href="/release">
+          <Button size="lg" variant="outline">
+            Previous Project
+          </Button>
+        </Link>
         <Link href="/">
           <Button size="lg" variant="default">
             Back to Homepage

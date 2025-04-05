@@ -25,12 +25,15 @@ export default async function HomePage() {
   return (
     <PageContainer>
       <Hero1
+        badge={"Previous Project"}
+        badgeLink={"/importer"}
         heading="Domain Model"
         description="In this project we built the domain model, determining the way core business entities are structured and mapped to a PostgreSQL database for robust data integrity and scalable operations."
         buttons={{
-          primary: { text: "Learn more", url: "/learn-more" },
-          secondary: { text: "Next Project", url: "/next-project" },
+          primary: { text: "Learn more" },
+          secondary: { text: "Next Project", url: "/scraper" },
         }}
+        primaryModalText={"placeholder"}
       />
 
       {/* Domain image rendered beneath the hero section */}

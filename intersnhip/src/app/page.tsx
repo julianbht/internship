@@ -2,6 +2,7 @@ import { Hero32, Integration } from "@/components/hero/hero32";
 import Image from "next/image";
 import { PageContainer } from "@/components/custom/page-container";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const integrations: Integration[][] = [
   [
@@ -144,13 +145,22 @@ export default function HomePage() {
           </h1>
         }
         description={
-          <p className="text-muted-foreground">
-            A showcase of the technologies we worked with during my internship.
-          </p>
+          <>
+            <p className="text-muted-foreground">
+              Take a journey through my 3-months internship at donista.
+            </p>
+            <p className="text-muted-foreground">
+              During this time, I've tackled 4 small projects. I will guide you
+              through them.
+            </p>
+            <p className="text-muted-foreground">
+              To the right are technologies I've learned to work with.
+            </p>
+          </>
         }
         button={
           <Button asChild size="lg" className="mt-10">
-            <a href="/about">Learn more</a>
+            <Link href="/importer">Start journey</Link>
           </Button>
         }
         integrations={integrations}

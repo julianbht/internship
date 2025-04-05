@@ -38,15 +38,17 @@ export default function ScraperPageInteractive({
     <PageContainer>
       <Hero1
         badge="Previous Project"
+        badgeLink={"/domain"}
         heading="DZI Charity Scraper"
         description="This project implements a recurring data ingestion pipeline that scrapes and processes data from the DZI website to build a structured database of German charitable organizations. The data is used to power a donation interface, allowing users to direct affiliate-generated funds to a charity of their choice. The system emphasizes modularity, separating scheduling, orchestration, and scraping logic."
         media={
           <ProjectCard project={realProject} onClickAction={handleCardClick} />
         }
         buttons={{
-          primary: { text: "Learn more", url: "#" },
-          secondary: { text: "Next project", url: "#" },
+          primary: { text: "Learn more" },
+          secondary: { text: "Next project", url: "/release" },
         }}
+        primaryModalText={"placeholder"}
       />
 
       {/* Render the project dialog when a card is clicked */}

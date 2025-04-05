@@ -24,7 +24,8 @@ export default async function ImporterPage() {
   return (
     <PageContainer>
       <Hero1
-        badge="Previous Project"
+        badge="Homepage"
+        badgeLink={"/"}
         heading="Transaction Importer"
         description="This project implements a recurring data pipeline that imports affiliate transaction data from Digidip, a network aggregating over 70,000 merchants. On a fixed schedule, the system retrieves, parses, and persists timestamped transaction data via the Digidip API, linking each entry to the appropriate merchant and capturing key financial metrics. The architecture cleanly separates scheduling, API access, parsing, and persistence to ensure robustness and maintainability."
         media={
@@ -38,9 +39,10 @@ export default async function ImporterPage() {
           </div>
         }
         buttons={{
-          primary: { text: "Learn more", url: "#" },
-          secondary: { text: "Next project", url: "#" },
+          primary: { text: "Learn more" },
+          secondary: { text: "Next project", url: "/domain" },
         }}
+        primaryModalText={"placeholder"}
       />
 
       <CodeExamplesSection

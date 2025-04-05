@@ -139,7 +139,7 @@ export default function HomePage() {
       <Hero32
         heading={
           <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
-            My Internship at donista
+            My internship at donista
           </h1>
         }
         description={

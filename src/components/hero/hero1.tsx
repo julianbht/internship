@@ -8,9 +8,17 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+// Import the shared dialog components
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
 interface Hero1Props {
   badge?: string;
-  badgeLink?: string; // URL for the clickable badge
+  badgeLink?: string;
   heading: string;
   description: string;
   buttons?: {
@@ -22,7 +30,7 @@ interface Hero1Props {
       url: string;
     };
   };
-  primaryModalText?: string; // Text to display in the modal when primary button is pressed
+  primaryModalText?: string;
   media?: ReactNode;
   background?: string;
 }
@@ -101,16 +109,20 @@ const Hero1 = ({
         </div>
       </section>
 
-      {/* Modal for primary button */}
-      {isModalOpen && primaryModalText && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded shadow-lg max-w-md mx-auto">
+      {/* Use the shared dialog for the primary button modal */}
+      {primaryModalText && (
+        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+          <DialogContent className="max-w-md mx-auto p-6 bg-background rounded shadow-lg">
+            {/* Add an empty DialogTitle to satisfy accessibility requirements */}
+            <DialogTitle>{""}</DialogTitle>
             <p>{primaryModalText}</p>
-            <Button onClick={() => setIsModalOpen(false)} className="mt-4">
-              Close
-            </Button>
-          </div>
-        </div>
+            <DialogClose asChild>
+              <Button onClick={() => setIsModalOpen(false)} className="mt-4">
+                Close
+              </Button>
+            </DialogClose>
+          </DialogContent>
+        </Dialog>
       )}
     </>
   );

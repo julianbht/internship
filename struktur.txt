@@ -1,0 +1,16 @@
+Backend:
+- Importer:
+    - Digidip Transactionimporter, Ingenious Merchant Importer
+    - DZI Scraper
+- Domänenmodell:
+    - Graphik draw.io
+    - Beispiel: Kotlin und postgres
+- API: mostly Spring JPA but a couple own ones
+- Distributed Task scheduling
+
+
+api endpoint
+release infra
+
+
+

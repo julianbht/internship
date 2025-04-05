@@ -37,12 +37,13 @@ const Hero32 = ({
             {button}
           </div>
           {integrations && (
-            <div className="flex flex-col gap-16 pt-12 pb-8 md:py-32">
+            <div className="flex flex-col gap-16 pt-12 pb-8 md:py-32 relative z-30">
               {integrations.map((line, i) => (
                 <div key={i} className="flex gap-x-22 odd:-translate-x-22">
                   {line.map((integration) => (
                     <div
                       key={integration.id}
+                      title={integration.id} // Tooltip text on hover
                       className="size-22 rounded-xl border border-background bg-background shadow-xl"
                     >
                       <div className="h-full w-full bg-muted/20 p-4">

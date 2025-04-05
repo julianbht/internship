@@ -7,22 +7,11 @@ import Link from "next/link";
 const integrations: Integration[][] = [
   [
     {
-      id: "firebase",
+      id: "spring-boot",
       icon: (
         <Image
-          src="/firebase-svgrepo-com.svg"
-          alt="Firebase"
-          width={50}
-          height={50}
-        />
-      ),
-    },
-    {
-      id: "google-cloud",
-      icon: (
-        <Image
-          src="/google-cloud-svgrepo-com.svg"
-          alt="Google Cloud"
+          src="/Spring_Boot.svg"
+          alt="Spring Boot"
           width={50}
           height={50}
         />
@@ -50,6 +39,17 @@ const integrations: Integration[][] = [
         />
       ),
     },
+    {
+      id: "postgresql",
+      icon: (
+        <Image
+          src="/postgresql-icon.svg"
+          alt="PostgreSQL"
+          width={50}
+          height={50}
+        />
+      ),
+    },
   ],
   [
     {
@@ -69,12 +69,13 @@ const integrations: Integration[][] = [
         />
       ),
     },
+
     {
-      id: "postgresql",
+      id: "google-cloud",
       icon: (
         <Image
-          src="/postgresql-icon.svg"
-          alt="PostgreSQL"
+          src="/google-cloud-svgrepo-com.svg"
+          alt="Google Cloud"
           width={50}
           height={50}
         />
@@ -93,17 +94,6 @@ const integrations: Integration[][] = [
     },
   ],
   [
-    {
-      id: "spring-boot",
-      icon: (
-        <Image
-          src="/Spring_Boot.svg"
-          alt="Spring Boot"
-          width={50}
-          height={50}
-        />
-      ),
-    },
     {
       id: "typescript",
       icon: (
@@ -127,9 +117,18 @@ const integrations: Integration[][] = [
       ),
     },
     {
-      id: "liquibase-2",
+      id: "shadcn",
+      icon: <Image src="/shadcn.svg" alt="shadcn" width={50} height={50} />,
+    },
+    {
+      id: "firebase",
       icon: (
-        <Image src="/Liquibase.svg" alt="Liquibase" width={50} height={50} />
+        <Image
+          src="/firebase-svgrepo-com.svg"
+          alt="Firebase"
+          width={50}
+          height={50}
+        />
       ),
     },
   ],

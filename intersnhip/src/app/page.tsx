@@ -69,7 +69,6 @@ const integrations: Integration[][] = [
         />
       ),
     },
-
     {
       id: "google-cloud",
       icon: (
@@ -144,17 +143,50 @@ export default function HomePage() {
           </h1>
         }
         description={
-          <div className={"text-muted-foreground"}>
-            <p>Take a journey through my 3-months internship at donista.</p>
-            <p>During this time, I&apos;ve tackled many small projects.</p>
-            <p>I will guide you through four of them.</p>
+          <div className="text-muted-foreground">
+            <p>
+              Take a journey through my 3-months internship at{" "}
+              <a
+                href="https://donista.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                donista
+              </a>
+              .
+            </p>
+            <p>
+              donista is an innovative e-commerce platform that converts
+              affiliate <br />
+              commissions into donations, merging online shopping with social
+              impact.
+            </p>
+            <p>
+              I joined donista on day 0 and helped build it from the ground up.
+            </p>
+            <p>
+              On this website, will guide you through four small projects I've
+              tackled.
+            </p>
             <p>To the right are technologies I&apos;ve learned to work with.</p>
           </div>
         }
         button={
-          <Button asChild size="lg" className="mt-10">
-            <Link href="/importer">Start journey</Link>
-          </Button>
+          <div className="flex gap-4 mt-10">
+            <Button asChild size="lg">
+              <Link href="/importer">Start journey</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link
+                href="https://github.com/julianbht/internship"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on GitHub
+              </Link>
+            </Button>
+          </div>
         }
         integrations={integrations}
       />

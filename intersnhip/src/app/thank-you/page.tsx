@@ -47,7 +47,9 @@ export default function ThankYouPage() {
           Thank You
         </h1>
         <p className="mx-auto max-w-2xl text-lg">
-          I've learned so much and its been a great experience!!!
+          to donista for offering me this amazing opportunity. Shout out to
+          anyone I wasnt able to mention below - André, Semjon and the Enactus
+          team - you've been great to work with.
         </p>
       </div>
 

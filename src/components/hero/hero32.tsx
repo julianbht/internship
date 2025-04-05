@@ -20,7 +20,8 @@ const Hero32 = ({
   integrations,
 }: Hero32Props) => {
   return (
-    <section className="relative overflow-hidden">
+    // Here we set a smaller min-height for small screens and min-h-screen for md and up
+    <section className="relative overflow-hidden min-h-[400px] md:min-h-screen">
       <div className="absolute inset-x-0 top-0 flex h-full w-full items-center justify-center opacity-100">
         <Image
           alt="background"

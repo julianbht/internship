@@ -1,0 +1,36 @@
+name: 'Deploy Backend App'
+
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        type: choice
+        description: Choose app to build
+        options:
+          - be-api
+          - be-network-importer
+      environment:
+        type: choice
+        description: Make a choice
+        options:
+          - production
+          - staging
+
+concurrency:
+  group: ${{ github.workflow }}-${{ inputs.app }}-${{ inputs.environment }}-${{ github.ref }}
+  cancel-in-progress: true
+
+run-name: "'${{ inputs.app }}/${{ inputs.environment }}' on ${{ github.ref_name }}@${{ github.sha }} by @${{ github.actor }}"
+
+jobs:
+  build:
+    uses: donista-org/donista/.github/workflows/common-build.yml@main
+    with:
+      appName: '${{ inputs.app }}'
+
+  deploy:
+    uses: donista-org/donista/.github/workflows/common-deploy.yml@main
+    needs: build
+    with:
+      appName: '${{ inputs.app }}'
+      namespace: '${{ inputs.environment }}'

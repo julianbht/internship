@@ -1,0 +1,88 @@
+on:
+  workflow_call:
+    inputs:
+      appName:
+        description: 'Application Name'
+        required: true
+        type: string
+      namespace:
+        description: 'Kubernetes Namespace'
+        required: true
+        type: string
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  PROJECT_ID: 'donista-backend'
+  GCLOUD_PROJECT: 'donista-backend'
+  GAR_LOCATION: 'europe-west1'
+  GKE_CLUSTER: 'donista-production-cluster'
+  GKE_ZONE: 'europe-west1-b'
+  DEPLOYMENT_NAME: '${{ inputs.appName }}'
+  REPOSITORY: 'docker-registry'
+  IMAGE: '${{ inputs.appName }}'
+  WORKLOAD_IDENTITY_PROVIDER: 'projects/###/locations/global/workloadIdentityPools/github/providers/my-repo'
+  NAMESPACE: '${{ inputs.namespace }}'
+
+
+
+jobs:
+  deploy:
+    name: 'Deploy to GKE'
+    runs-on: 'ubuntu-latest'
+
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      - name: 'Checkout'
+        uses: 'actions/checkout@v4'
+
+      - name: 'Replace template variables in $DEPLOYMENT_NAME/k8s/overlays/${{ env.NAMESPACE }}/kustomization.yaml'
+        run: |
+          sed -i "s|__GITHUB_REPOSITORY__|${{ github.repository }}|g" $DEPLOYMENT_NAME/k8s/overlays/${{ env.NAMESPACE }}/kustomization.yaml
+          sed -i "s|__GITHUB_REF_NAME__|${{ github.ref_name }}|g" $DEPLOYMENT_NAME/k8s/overlays/${{ env.NAMESPACE }}/kustomization.yaml
+          sed -i "s|__GITHUB_SHA__|${{ github.sha }}|g" $DEPLOYMENT_NAME/k8s/overlays/${{ env.NAMESPACE }}/kustomization.yaml
+          sed -i "s|__GITHUB_ACTOR__|${{ github.triggering_actor }}|g" $DEPLOYMENT_NAME/k8s/overlays/${{ env.NAMESPACE }}/kustomization.yaml
+          sed -i "s|__GITHUB_WORKFLOW__|${{ github.workflow }}|g" $DEPLOYMENT_NAME/k8s/overlays/${{ env.NAMESPACE }}/kustomization.yaml
+
+      # Configure Workload Identity Federation and generate an access token.
+      #
+      # See https://github.com/google-github-actions/auth for more options,
+      # including authenticating via a JSON credentials file.
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/###
+        with:
+          workload_identity_provider: '${{ env.WORKLOAD_IDENTITY_PROVIDER }}'
+
+      # Authenticate Docker to Google Cloud Artifact Registry
+      - name: 'Docker Auth'
+        uses: 'docker/login-action@v3'
+        with:
+          username: 'oauth2accesstoken'
+          password: '${{ steps.auth.outputs.auth_token }}'
+          registry: '${{ env.GAR_LOCATION }}-docker.pkg.dev'
+
+      # Get the GKE credentials so we can deploy to the cluster
+      - name: 'Set up GKE credentials'
+        uses: 'google-github-actions/get-gke-credentials@v2'
+        with:
+          cluster_name: '${{ env.GKE_CLUSTER }}'
+          location: '${{ env.GKE_ZONE }}'
+
+      # Deploy the Docker image to the GKE cluster
+      - uses: imranismail/setup-kustomize@v2
+      - name: 'Deploy to GKE (donista-${{ env.NAMESPACE }})'
+        run: |-
+          cd $DEPLOYMENT_NAME/k8s/overlays/${{ env.NAMESPACE }}
+          # replacing the image name in the k8s template
+          kustomize edit set image LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:${GITHUB_SHA}
+          kustomize build . | kubectl apply -f -          
+
+      - name: 'Verify Deployment to GKE (donista-${{ env.NAMESPACE }})'
+        run: |-
+          kubectl rollout status deployment/$DEPLOYMENT_NAME -n donista-${NAMESPACE}

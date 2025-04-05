@@ -146,9 +146,9 @@ export default function HomePage() {
         description={
           <div className={"text-muted-foreground"}>
             <p>Take a journey through my 3-months internship at donista.</p>
-            <p>During this time, I've tackled many small projects.</p>
+            <p>During this time, I&apos;ve tackled many small projects.</p>
             <p>I will guide you through four of them.</p>
-            <p>To the right are technologies I've learned to work with.</p>
+            <p>To the right are technologies I&apos;ve learned to work with.</p>
           </div>
         }
         button={

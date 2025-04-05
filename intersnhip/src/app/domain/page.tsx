@@ -1,7 +1,8 @@
 import { readFileContent } from "@/lib/read-file-content";
-import { Hero8 } from "@/components/hero/hero8";
 import { CodeExamplesSection } from "@/components/custom/code-examples";
 import { PageContainer } from "@/components/custom/page-container";
+import { Hero1 } from "@/components/hero/hero1";
+import Image from "next/image";
 
 export default async function HomePage() {
   const charityCode = await readFileContent(
@@ -23,14 +24,25 @@ export default async function HomePage() {
 
   return (
     <PageContainer>
-      <Hero8
-        imageSrc="/domain.svg"
-        alt="Domain illustration"
-        title="Domain Model"
+      <Hero1
+        heading="Domain Model"
         description="In this project we built the domain model, determining the way core business entities are structured and mapped to a PostgreSQL database for robust data integrity and scalable operations."
-        primaryButtonText="Learn more"
-        secondaryButtonText="Next Project"
+        buttons={{
+          primary: { text: "Learn more", url: "/learn-more" },
+          secondary: { text: "Next Project", url: "/next-project" },
+        }}
       />
+
+      {/* Domain image rendered beneath the hero section */}
+      <div className="relative mx-auto mt-12 w-full max-w-9xl h-[900px] rounded-t-lg overflow-hidden">
+        <Image
+          src="/domain.svg"
+          alt="Domain illustration"
+          fill
+          className="object-contain"
+          priority
+        />
+      </div>
 
       <CodeExamplesSection
         codeExamples={[

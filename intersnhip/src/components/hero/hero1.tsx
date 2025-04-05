@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 interface Hero1Props {
@@ -17,7 +18,8 @@ interface Hero1Props {
       url: string;
     };
   };
-  media: ReactNode; // Updated from image object to a generic ReactNode
+  media?: ReactNode;
+  background?: string;
 }
 
 const Hero1 = ({
@@ -35,9 +37,16 @@ const Hero1 = ({
     },
   },
   media,
+  background = "/square-alt-grid.svg",
 }: Hero1Props) => {
   return (
-    <section className="py-32">
+    <section className="relative py-32">
+      <Image
+        alt="background"
+        src={background}
+        fill
+        className="absolute inset-0 z-[-1] opacity-90 object-cover [mask-image:radial-gradient(75%_75%_at_center,white,transparent)]"
+      />
       <div className="container">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -69,8 +78,9 @@ const Hero1 = ({
               )}
             </div>
           </div>
-          {/* Accepts any ReactNode instead of a fixed image */}
-          <div className="flex items-center justify-center">{media}</div>
+          {media && (
+            <div className="flex items-center justify-center">{media}</div>
+          )}
         </div>
       </div>
     </section>

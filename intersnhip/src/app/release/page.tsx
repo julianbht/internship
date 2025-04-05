@@ -2,7 +2,6 @@ import { readFileContent } from "@/lib/read-file-content";
 import { Hero1 } from "@/components/hero/hero1";
 import { CodeExamplesSection } from "@/components/custom/code-examples";
 import { PageContainer } from "@/components/custom/page-container";
-import Image from "next/image";
 
 export default async function ReleaseInfrastructurePage() {
   // Load code snippets from the release infrastructure code-snippets folder

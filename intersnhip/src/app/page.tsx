@@ -166,8 +166,8 @@ export default function HomePage() {
               I joined donista on day 0 and helped build it from the ground up.
             </p>
             <p>
-              On this website, will guide you through four small projects I've
-              tackled.
+              On this website, I will guide you through four small projects
+              I&apos;ve tackled.
             </p>
             <p>To the right are technologies I&apos;ve learned to work with.</p>
           </div>

@@ -42,14 +42,14 @@ const Hero32 = ({
                 <div key={i} className="flex gap-x-22 odd:-translate-x-22">
                   {line.map((integration) => (
                     <div key={integration.id} className="relative group">
-                      <div className="size-22 rounded-xl border border-background bg-background shadow-xl">
+                      <div className="size-22 rounded-xl border border-background bg-background shadow-xl transition-transform duration-200 ease-in-out hover:scale-110">
                         <div className="h-full w-full bg-muted/20 p-4">
                           {integration.icon}
                         </div>
                       </div>
                       {/* Custom Tooltip */}
                       <div className="absolute left-1/2 bottom-full mb-2 w-max -translate-x-1/2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200 ease-in-out pointer-events-none">
-                        <div className="bg-gray-800 text-white text-xs rounded py-1 px-2 whitespace-nowrap">
+                        <div className="bg-black text-white text-xs rounded py-1 px-2 whitespace-nowrap">
                           {integration.id}
                         </div>
                       </div>

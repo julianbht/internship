@@ -144,18 +144,12 @@ export default function HomePage() {
           </h1>
         }
         description={
-          <>
-            <p className="text-muted-foreground">
-              Take a journey through my 3-months internship at donista.
-            </p>
-            <p className="text-muted-foreground">
-              During this time, I've tackled 4 small projects. I will guide you
-              through them.
-            </p>
-            <p className="text-muted-foreground">
-              To the right are technologies I've learned to work with.
-            </p>
-          </>
+          <div className={"text-muted-foreground"}>
+            <p>Take a journey through my 3-months internship at donista.</p>
+            <p>During this time, I've tackled many small projects.</p>
+            <p>I will guide you through four of them.</p>
+            <p>To the right are technologies I've learned to work with.</p>
+          </div>
         }
         button={
           <Button asChild size="lg" className="mt-10">

@@ -17,9 +17,31 @@ export default async function HomePage() {
   const organisationCode = await readFileContent(
     "@/app/domain/code-snippets/Organisation.kt",
   );
-
   const projectCode = await readFileContent(
     "@/app/domain/code-snippets/Project.kt",
+  );
+
+  const modalContent = (
+    <div className="space-y-4">
+      <h2 className="text-2xl font-semibold">Domain Model Insights</h2>
+      <p>
+        In this project, we engineered a robust domain model anchored in
+        PostgreSQL, ensuring data integrity and scalability. Our approach
+        guarantees that core business entities map cleanly to the relational
+        database.
+      </p>
+      <p>
+        An interesting implementation is the handling of many-to-many
+        relationships, which are challenging due to the need for mapping tables.
+        The <span className="font-medium">Charity</span> entity exemplifies this
+        with its dynamic management of fields of work and related associations.
+      </p>
+      <p>
+        Moreover, our solution leverages Kotlin as the data relational mapper,
+        which allows us to define domain entities and relationships in a
+        type-safe and expressive way.
+      </p>
+    </div>
   );
 
   return (
@@ -33,7 +55,7 @@ export default async function HomePage() {
           primary: { text: "Learn more" },
           secondary: { text: "Next Project", url: "/scraper" },
         }}
-        primaryModalText={"placeholder"}
+        primaryModalText={modalContent}
       />
 
       {/* Domain image rendered beneath the hero section */}

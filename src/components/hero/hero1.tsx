@@ -30,7 +30,7 @@ interface Hero1Props {
       url: string;
     };
   };
-  primaryModalText?: string;
+  primaryModalText?: ReactNode;
   media?: ReactNode;
   background?: string;
 }
@@ -115,7 +115,7 @@ const Hero1 = ({
           <DialogContent className="max-w-md mx-auto p-6 bg-background rounded shadow-lg">
             {/* Add an empty DialogTitle to satisfy accessibility requirements */}
             <DialogTitle>{""}</DialogTitle>
-            <p>{primaryModalText}</p>
+            {primaryModalText}
             <DialogClose asChild>
               <Button onClick={() => setIsModalOpen(false)} className="mt-4">
                 Close

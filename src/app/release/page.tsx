@@ -21,6 +21,21 @@ export default async function ReleaseInfrastructurePage() {
     "@/app/release/code-snippets/deployment.yaml",
   );
 
+  const modalContent = (
+    <div className="space-y-4">
+      <h2 className="text-2xl font-semibold">
+        Release Infrastructure Insights
+      </h2>
+      <p>
+        With features such as concurrency control, template variable
+        substitution, and comprehensive health probes, this system exemplifies
+        modern DevOps practices for reliable and scalable deployments. It
+        ensures that backend services are delivered seamlessly, maintaining high
+        availability and robust error handling.
+      </p>
+    </div>
+  );
+
   return (
     <PageContainer>
       <Hero1
@@ -32,7 +47,7 @@ export default async function ReleaseInfrastructurePage() {
           primary: { text: "Learn More" },
           secondary: { text: "Finish", url: "/thank-you" },
         }}
-        primaryModalText={"Detailed documentation forthcoming."}
+        primaryModalText={modalContent}
       />
 
       <CodeExamplesSection

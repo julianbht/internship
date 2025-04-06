@@ -34,6 +34,24 @@ export default function ScraperPageInteractive({
     console.log("Project clicked: " + project);
   };
 
+  const modalContent = (
+    <div className="space-y-4">
+      <h2 className="text-2xl font-semibold">DZI Scraper Insights</h2>
+      <p>
+        Click on the card to explore how the scraped data is used! I designed
+        this user-friendly interface, providing the option to pick a charity to
+        support. It&quot;s a key feature of donista&quot;s business model.
+      </p>
+      <p>
+        Built on a modular and scalable architecture, our scraper not only
+        extracts data but also dynamically validates and transforms it in
+        real-time. This ensures that every charity record is accurate,
+        supporting donista&quot;s commitment to data integrity and delivering a
+        seamless user experience.
+      </p>
+    </div>
+  );
+
   return (
     <PageContainer>
       <Hero1
@@ -48,7 +66,7 @@ export default function ScraperPageInteractive({
           primary: { text: "Learn more" },
           secondary: { text: "Next project", url: "/release" },
         }}
-        primaryModalText={"placeholder"}
+        primaryModalText={modalContent}
       />
 
       {/* Render the project dialog when a card is clicked */}
